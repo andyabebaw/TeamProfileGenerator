@@ -1,7 +1,7 @@
 
 function createHtml(employees) {
     let html = employeeTemplatePart1;
-
+    //loops through employee and picks the correct employee type helper function to add to html
     employees.forEach(function (person) {
         console.log(person);
         switch (person.getRole()) {
@@ -20,6 +20,7 @@ function createHtml(employees) {
     return html + employeeTemplatePart2;
 }
 
+//base html for the page
 const employeeTemplatePart1 = '<!DOCTYPE html><html lang="en"><head><meta charset="UTF-8"><meta http-equiv="X-UA-Compatible" content="IE=edge"><meta name="viewport" content="width=device-width, initial-scale=1.0"><title>Team Profile Generator</title><link rel="stylesheet" href="./styles.css" /></head><body><header><h1> Team Profile Generator</h1></header><div id = "employeeCards">'
 const employeeTemplatePart2 = '</div></body></html>'
 
@@ -65,4 +66,5 @@ let intern = (data) => {
 `;
 } 
 
+//exports helper function
 module.exports = createHtml;

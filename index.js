@@ -3,14 +3,15 @@ const generateHTML = require('./src/generateHTML');
 const inquirer = require("inquirer");
 inquirer.registerPrompt("loop", require("inquirer-loop")(inquirer))
 
-
+//impoorts employee clases
 const Manager = require('./lib/Manager');
 const Engineer = require('./lib/Engineer');
 const Intern = require('./lib/Intern');
 
-
+//initializes array to store employees to be sent to generateHTML
 let employees = []
 
+//writes html to index.html in dist folder
 function writeToFile(fileName, data) {
     fs.writeFile(fileName, data, function (err) {
         if (err) throw err;
@@ -19,6 +20,7 @@ function writeToFile(fileName, data) {
 }
 
 function init() {
+    //asks manager questions
     const managerInfoPrompts = [
         {
             name: "name",
@@ -45,7 +47,7 @@ function init() {
         const manager = new Manager(response.name, response.id, response.email, response.officeNumber)
         employees.push(manager)
     }).then(() => {
-
+        // loops employee question if user would like to add another employee
         var addAnotherEmployee = {
             name: "addEmployee",
             message: "Would you like to add an employee?",
@@ -103,7 +105,7 @@ function init() {
             }
             );
             
-            console.log(employees)
+            //generateHTML takes list of employees and generates a HTML file.
             let html = generateHTML(employees);
             writeToFile("./dist/index.html" , html);
         })
