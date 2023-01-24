@@ -1,6 +1,8 @@
 # TeamProfileGenerator
 
- 
+## Video Link
+https://drive.google.com/file/d/1IydR5ZNsBwcm0BRoCrlSHeES6Lm55QuI/view?usp=sharing
+
 ## Description
 
 This app allows you to generate a team profile page with cards for each of the employees
