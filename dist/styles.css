@@ -1,0 +1,49 @@
+:root {
+    --main-color: #48286f;
+    --main-color-lighter: #763eba;
+    --secondary-color: #1b502c;
+    --radius: 10px;
+}
+
+
+/* removes margin from body */
+body {
+    margin: 0;
+}
+
+header {
+    display: flex;
+    justify-content: center;
+    background-image: linear-gradient(var(--main-color-lighter), var(--main-color));
+    color: white;
+    font-weight: bold;
+    margin-bottom: 10px;
+    padding: 8px;
+}
+
+.card {
+    
+    width: 240px;
+    color: var(--main-color);
+    border-radius: var(--radius);
+    border: 6px solid var(--secondary-color);
+    text-align: center;
+    margin: 10px;
+   }
+ 
+.cardHeader {
+    color: white;
+    background-color: var(--secondary-color);
+    padding-top: 10px;
+    padding-bottom: 6px;
+}
+
+#employeeCards {
+    display: flex;
+    flex-wrap: wrap ;
+    justify-content: center;
+}
+
+.cardHeader h2, h5{
+    margin: 0px;
+}
